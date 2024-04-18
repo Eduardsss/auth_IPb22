@@ -1,5 +1,7 @@
 <?php
 
+guest();
+
 require "Validator.php";
 require "Database.php";
 $config = require("config.php");
@@ -25,9 +27,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($errors)) {
     $_SESSION["user"] = true;
     $_SESSION["email"] = $_POST["email"];
-    echo $_SESSION["email"];
+
+    header("Location: /");
+    die();
   }
 }
 
 $title = "Login";
 require "views/auth/login.view.php";
+
+unset($_SESSION["flash"]);
