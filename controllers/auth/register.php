@@ -3,8 +3,8 @@
 guest();
 
 // Pieprasīt DB, config, Validator
-require "Validator.php";
-require "Database.php";
+require "Core/Validator.php";
+require "Core/Database.php";
 $config = require("config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
