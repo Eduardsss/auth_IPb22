@@ -1,8 +1,5 @@
 <?php
 
-if (!$_SESSION["user"]) {
-  header("Location: /login");
-  die();
-}
+auth();
 
-require "views/index.view.php";
+require "../views/index.view.php";
